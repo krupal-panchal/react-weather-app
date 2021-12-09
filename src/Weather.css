@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
 
-body {
+body,
+input {
     font-family: 'Readex Pro', sans-serif;
+}
+input:focus {
+    outline: none;
 }
 p {
     font-size: 25px;
@@ -13,9 +17,6 @@ p {
 }
 .app-left {
     width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: rgb(0 0 0 / 82%);
 }
 .app-left input {
@@ -34,6 +35,34 @@ p {
     padding: 50px;
     margin-top: -100px;
     text-align: left;
+}
+.weather-form {
+    display: inline-block;
+    padding: 50px;
+}
+.weather-form input[type=text] {
+    width: 400px;
+    margin: 20px 0;
+    padding: 20px;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.weather-form .search-btn {
+    margin: 0 auto; 
+    border: 2px solid #99b67f;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 25px;
+    background: #99b67f;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.weather-form .search-btn:hover {
+    background: transparent;
+    transform: translateY(-2px);
+    color: #fff;
 }
 .city-text {
     background: lightgrey;

@@ -3,6 +3,8 @@ import WeatherBG from './weatherbg.jpg';
 import Wind from './wind.png';
 import Cloud from './cloud.png';
 import Smoke from './smoke.png';
+import Sun from './sun.png';
+import Rain from './rain.png';
 
 function WeatherApp () {
 
@@ -14,14 +16,8 @@ function WeatherApp () {
         getWeatherInfo();
     }, []);
     
-    function getCityName(event){
-        let city = event.target.value;
-        setCityName(city);
-    }
-
-    function formSubmit(e) {
-        e.preventDefault();
-        getWeatherInfo();
+    function getCityName(value){
+        setCityName(value);
     }
 
     function getWeatherInfo() {
@@ -38,8 +34,16 @@ function WeatherApp () {
                 let weatIcon = WeatherInfo.weather[0]['main'];
                 if( weatIcon == 'Clouds' ) {
                     setweatherIcon( Cloud );
-                } else if( weatIcon == 'Smokes' ) {
+                    console.log( 'cloud icon' );
+                } else if( weatIcon == 'Smoke' ) {
                     setweatherIcon( Smoke );
+                    console.log( 'smoke icon' );
+                } else if( weatIcon == 'Clear' ) {
+                    setweatherIcon( Sun );
+                    console.log( 'sun icon' );
+                } else if( weatIcon == 'Rain' ) {
+                    setweatherIcon( Rain );
+                    console.log( 'rain icon' );
                 } else {
                     setweatherIcon( Cloud );
                 }
@@ -55,13 +59,18 @@ function WeatherApp () {
 
     }
 
+    function formSubmit(e) {
+        e.preventDefault();
+        getWeatherInfo();
+    }
+
     return (
         <>
             <div className="weather-app">
                 <div className="app-left">
                     <div className="weather-form">
                         <form className="w-form" onSubmit={formSubmit}>
-                            <input type="text" className="city-name" value={CityName} placeholder="Add City Name" onChange={getCityName}/>
+                            <input type="text" className="city-name" value={CityName} placeholder="Add City Name" onChange={(event)=>getCityName(event.target.value)}/>
                             <input type="submit" value="Search" className="search-btn" />
                         </form>
                     </div>
