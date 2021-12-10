@@ -7,6 +7,14 @@ input {
 input:focus {
     outline: none;
 }
+h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 35px;
+}
+.main-logo {
+    width: 150px;
+}
 p {
     font-size: 25px;
     margin: 0;
@@ -16,14 +24,14 @@ p {
     height: 100vh;
 }
 .app-left {
-    width: 40%;
+    width: 30%;
     background: rgb(0 0 0 / 82%);
 }
 .app-left input {
     display: block;
 }
 .app-right {
-    width: 60%;
+    width: 70%;
     background: linear-gradient(158deg, rgba(9,121,118,1) 3%, rgba(75,121,9,0.5214460784313726) 100%, rgba(0,36,10,1) 100%, rgba(0,212,255,1) 100%);
 }
 .weather-bg {
@@ -48,6 +56,7 @@ p {
     border: none;
     border-radius: 10px;
     font-size: 30px;
+    text-transform: capitalize;
 }
 .weather-form .search-btn {
     margin: 0 auto; 
@@ -69,6 +78,9 @@ p {
     padding: 20px 30px;
     display: inline-block;
 }
+.city-text p {
+    text-transform: capitalize;
+}
 .text-block {
     background: lightgrey;
     padding: 30px;
@@ -86,4 +98,7 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.error-div p {
+    color: red;
 }
