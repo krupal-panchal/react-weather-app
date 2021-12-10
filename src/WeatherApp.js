@@ -28,7 +28,7 @@ function WeatherApp () {
     function getWeatherInfo() {
         
         let apiKey = '6cdc0c96ba5039cb7038c39f9130f6b5';
-        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${apiKey}`;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${apiKey}`;
 
         fetch( apiUrl )
         .then( ( response ) => response.json() )
